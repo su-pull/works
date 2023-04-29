@@ -20,7 +20,7 @@
     "next": "13.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-page-fitter": "^1.1.7",
+    "react-page-fitter": "^1.1.8",
     "rehype-pretty-code": "^0.9.4",
     "rehype-stringify": "^9.0.3",
     "remark": "^14.0.2",
@@ -30,10 +30,10 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "eslint": "8.39.0",
     "@next/eslint-plugin-next": "^12.3.4",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
+    "eslint": "8.39.0",
     "eslint-config-next": "^13.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react-hooks": "^4.6.0"
