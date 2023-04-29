@@ -1,0 +1,27 @@
+.list_count {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.list_style {
+  display: inherit;
+}
+
+.link_card {
+  width: 360px;
+  height: 140px;
+  padding: 4px 20px;
+  box-shadow: 0 0 2px -0.4px var(--color-shadow);
+}
+
+@media screen and (max-width: 739.98px) {
+  .list_count {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+  .link_card {
+    width: 300px;
+    height: 120px;
+  }
+}

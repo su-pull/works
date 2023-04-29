@@ -1,0 +1,41 @@
+.side_fixed {
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background: #333;
+  transition: all 2s;
+}
+.ul_box {
+  position: absolute;
+  top: 0;
+  left: -140px;
+}
+.list_box {
+  position: relative;
+  height: auto;
+  width: 280px;
+  display: flex;
+  margin: 12px 0;
+  font-size: 8px;
+  background: white;
+  box-shadow: 0 0 2px -0.4px var(--color-shadow);
+}
+.link_box {
+  position: relative;
+  display: inherit;
+  justify-content: flex-end;
+  align-items: center;
+  left: -20px;
+  color: #333;
+  padding: 0 24px;
+  width: inherit;
+  height: inherit;
+}
+@media screen and (max-width: 739.98px) {
+  .side_fixed {
+    position: absolute;
+    width: 1px;
+  }
+}
