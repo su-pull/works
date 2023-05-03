@@ -7,7 +7,7 @@ const Footer = () => {
   const apply = styles.footer_main + ' ' + italianno.className
   return (
     <footer className={apply}>
-      <div className={styles.footer_text}>{'2023 © self '}</div>
+      <div className={styles.footer_text}>{'2023 @self'}</div>
     </footer>
   )
 }

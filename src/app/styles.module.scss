@@ -12,7 +12,8 @@
   width: 360px;
   height: 140px;
   padding: 4px 20px;
-  box-shadow: 0 0 2px -0.4px var(--color-shadow);
+  border: solid 1px black;
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 739.98px) {

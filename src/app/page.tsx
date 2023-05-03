@@ -5,8 +5,8 @@ import { Metadata } from 'next'
 import generateSEOData from 'lib/generateSEOData'
 
 export const metadata: Metadata = generateSEOData({
-  title: 'Posts',
-  subtitle: 'posts articles',
+  title: 'Projects',
+  subtitle: 'projects',
   date: undefined,
 })
 

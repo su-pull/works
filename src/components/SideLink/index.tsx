@@ -24,7 +24,7 @@ const SideLink = () => {
         {linkArr.map(({ slug, title }) => (
           <motion.li
             animate={{
-              x: isHover == slug ? 100 : 0,
+              x: isHover == slug ? 40 : 0,
               fontSize: isHover == slug ? '14px' : '10px',
               height: isHover == slug ? '80px' : '40px',
               transition: {

@@ -77,5 +77,3 @@ export default PageRoot
   position: relative;
 }
 ```
-
-framer-motion with this hook is happy.
