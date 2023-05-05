@@ -14,27 +14,27 @@ If you experience flicker, please report it to me.
 ```tsx {3}
 import { ReactNode, useRef } from 'react'
 import useFitter from 'react-page-fitter'
+import { usePathname } from 'next/navigation'
 
-type = {
+type MainProps = {
   children: ReactNode
   classFitIn: string
   classFitOut: string
   className: string
 }
 
-const Main = ({ children, classFitIn, classFitOut, className }) => {
+const Main = ({ children, classFitIn, classFitOut, className }: MainProps) => {
   const ref = useRef<HTMLElement>(null)
+  const pathname = usePathname()
   const isFit = useFitter(ref, pathname)
-  const classApply = isFitted ? classFitIn : classFitOut
-  const classes = className + " " + classApply
-
+  const classApply = isFit ? classFitIn : classFitOut
+  const classes = className + ' ' + classApply
   return (
     <main ref={ref} className={classes}>
       {children}
     </main>
   )
 }
-
 export default Main
 ```
 
