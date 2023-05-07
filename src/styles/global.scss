@@ -39,9 +39,9 @@ body {
   background: #fffffe;
   color: rgb(55 65 81);
   text-align: center;
-  width: 820px;
+  width: 600px;
   left: 190px;
-  word-break: keep-all;
+  word-break: break-all;
   margin: auto;
   min-height: 100vh;
   font-size: 14px;
@@ -71,7 +71,6 @@ li {
 
 p {
   line-height: 1.68;
-  white-space: pre-wrap;
   margin: 16px 0;
 }
 

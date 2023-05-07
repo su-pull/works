@@ -1,28 +1,27 @@
 .pages_root {
   text-align: left;
   padding: 120px 0;
-  min-width: 600px;
 }
 
 .fit_in {
   position: absolute;
-  inset: 0%;
-  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: fit-content;
   height: fit-content;
 }
 
 .fit_out {
   position: relative;
-  display: inline-block;
 }
 
 @media screen and (max-width: 739.98px) {
   .pages_root {
     padding: 120px 16px;
-    min-width: 100%;
+    width: 100%;
   }
-  .fit_out {
+  .fit_in {
     width: 100%;
   }
 }

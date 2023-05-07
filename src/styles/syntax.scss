@@ -17,7 +17,6 @@ pre {
   padding: 20px 0;
   margin: 32px 0;
   width: 600px;
-  overflow: scroll;
   border: solid 1px black;
 }
 
@@ -80,7 +79,6 @@ p code {
 
   [data-rehype-pretty-code-fragment] div {
     top: 10px;
-    margin-right: 0;
   }
 
   [data-rehype-pretty-code-fragment] code .line span {
