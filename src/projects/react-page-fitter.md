@@ -4,52 +4,18 @@ subtitle: 'simple ui style hook'
 date: '2023-04-7'
 ---
 
-It has been confirmed to work with Remix and Next.js pages root.
-The Next.js beta app route has rendering flickering.
-Next.js pages root has rendering very stable, no need to check for undefined.
-If you experience flicker, please report it to me.
-
-## create component
-
-```tsx {3}
-import { ReactNode, useRef } from 'react'
-import useFitter from 'react-page-fitter'
-import { usePathname } from 'next/navigation'
-
-type MainProps = {
-  children: ReactNode
-  classFitIn: string
-  classFitOut: string
-  className: string
-}
-
-const Main = ({ children, classFitIn, classFitOut, className }: MainProps) => {
-  const ref = useRef<HTMLElement>(null)
-  const pathname = usePathname()
-  const isFit = useFitter(ref, pathname)
-  const classApply = isFit ? classFitIn : classFitOut
-  const classes = className + ' ' + classApply
-  return (
-    <main ref={ref} className={classes}>
-      {children}
-    </main>
-  )
-}
-export default Main
-```
-
-## use how to component
+It can also be used with Next.js App Router and other React frameworks.
 
 ```tsx
 import useFitter, { Main } from 'react-page-fitter'
 
 const PageRoot = ({ children }: { children: React.ReactNode }) => {
-  const isFit = useFitter()
+  const { isRendering } = useFitter()
 
   return (
     <>
-      {isFit !== undefined && (
-        <Main className="pages_root" classFitIn="fit_in" classFitOut="fit_out">
+      {isRendering !== undefined && (
+        <Main classFitIn="fit_in" classFitOut="fit_out">
           {children}
         </Main>
       )}
@@ -60,20 +26,29 @@ const PageRoot = ({ children }: { children: React.ReactNode }) => {
 export default PageRoot
 ```
 
-## CSS
+If you put boolean in the initial value, style FOCU will always occur, but FOCU of reloading by styles toggle is prevented by setting undefined as the initial value and not displaying it during undefined.
+This is because the DOM is constructed and then computed before it is rendered.
 
-```css {2, 9}
-.fit_in {
-  position: absolute;
-  inset: 0%;
-  margin: auto;
-  width: fit-content;
-  height: fit-content;
-}
-```
+At the moment this needs to be wrapped around a component and I hope to integrate it into the library in the future.
 
-```css {2}
-.fit_out {
-  position: relative;
+And just by using hooks you can create components like this.
+
+```tsx {19}
+import { useRef } from 'react'
+import useFitter from 'react-page-fitter'
+import { usePathname } from 'next/navigation'
+
+const Article = ({ children, classFitIn, classFitOut, className }) => {
+  const ref = useRef(null)
+  const pathname = usePathname()
+  const { isFit } = useFitter(ref, pathname)
+
+  return (
+    <article ref={ref} className={isFit ? classFitIn : classFitOut}>
+      {children}
+    </article>
+  )
 }
+
+export default Main
 ```
