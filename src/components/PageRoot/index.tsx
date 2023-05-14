@@ -9,17 +9,16 @@ type PageRootProps = {
   children: ReactNode
 }
 
-const PageRoot = ({ children }: PageRootProps): JSX.Element => {
-  const isFit = useFitter()
+const PageRoot = ({ children }: PageRootProps) => {
   const pathname = usePathname()
+  const isFit = useFitter()
+
+  if (isFit === undefined) return <div className={styles.spinner} />
+
   return (
-    <>
-      {isFit !== undefined && (
-        <Main location={pathname} className={styles.pages_root} classFitIn={styles.fit_in} classFitOut={styles.fit_out}>
-          {children}
-        </Main>
-      )}
-    </>
+    <Main location={pathname} className={styles.pages_root} classFitIn={styles.fit_in} classFitOut={styles.fit_out}>
+      {children}
+    </Main>
   )
 }
 

@@ -5,6 +5,7 @@ import Layout from 'components/Layout'
 import { Metadata } from 'next'
 import PageRoot from 'components/PageRoot'
 import Font from 'components/Font'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
   icons: {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Layout>
           <Font />
+          <Analytics mode={'production'} />
           <PageRoot>{children}</PageRoot>
         </Layout>
       </body>
