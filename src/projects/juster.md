@@ -6,10 +6,6 @@ date: '2022-12-24'
 
 Readme: [juster_JIS README](https://github.com/su-pull/juster/blob/main/README_JIS.md) / [juster_English README](https://github.com/su-pull/juster/blob/main/README.md)
 
-[![Release Status](https://img.shields.io/github/release/su-pull/juster?color=lightblue)](https://github.com/su-pull/juster/releases/latest) [![code size](https://img.shields.io/badge/code%20size-6.2kb-lightblue)](https://github.com/su-pull/juster) [![License: MIT](https://img.shields.io/badge/License-MIT-lightblue)](https://opensource.org/licenses/MIT)
-
-<!-- ![code - size](https://img.shields.io/github/languages/code-size/su-pull/juster?color=lightblue) -->
-
 | Input            | Output                                      |
 | ---------------- | ------------------------------------------- |
 | Ctrl + Space     | IME toggle                                  |
@@ -19,8 +15,12 @@ Readme: [juster_JIS README](https://github.com/su-pull/juster/blob/main/README_J
 | Ctrl + n         | ↓ Cursor down                               |
 | Ctrl + a         | Cursor line start                           |
 | Ctrl + e         | Cursor line end                             |
+| Alt + ↑          | Scroll to top                               |
+| Alt + ↓          | Scroll to bottom                            |
 | Alt + ←          | Cursor line start                           |
 | Alt + →          | Cursor line end                             |
+| Win + ↑          | Cursor line start & Cursor up               |
+| Win + ↓          | Cursor line end & Cursor down               |
 | Win + ←          | Cursor word backward                        |
 | Win + →          | Cursor word forward                         |
 | Shift + Alt + ←  | Backward selection                          |
@@ -31,10 +31,11 @@ Readme: [juster_JIS README](https://github.com/su-pull/juster/blob/main/README_J
 | Ctrl + h         | Delete backward 1 character                 |
 | Ctrl + k         | Convert to katakana                         |
 | Ctrl + ;         | Convert to half-width katakana              |
-| Alt + r          | Reload                                      |
+| Ctrl + Enter     | Rename                                      |
 | Alt + Shift + 2  | Window screenshot in a clipboard            |
 | Alt + Shift + 3  | Screenshot in a clipboard                   |
 | Alt + Shift + 4  | Cropping capture                            |
+| Alt + r          | Reload                                      |
 | Alt + z          | Undo                                        |
 | Alt + Shift + z  | Redo                                        |
 | Alt + x          | Cut                                         |
@@ -47,23 +48,18 @@ Readme: [juster_JIS README](https://github.com/su-pull/juster/blob/main/README_J
 | Alt + Shift + n  | New folder                                  |
 | Alt + o          | Open                                        |
 | Alt + Left Click | Open link in a new tab / Multiple selection |
-| Ctrl + Enter     | Rename                                      |
 | Alt + w          | Close the tab window                        |
 | Alt + q          | Close the application                       |
 | Alt + m          | Minimize window                             |
 | Alt + h          | Minimize all window                         |
-| Ctrl + ↑         | Window transform move up                    |
-| Ctrl + ↓         | Window transform move down                  |
-| Ctrl + ←         | Window transform move left                  |
-| Ctrl + →         | Window transform move right                 |
-| Win + ↑          | Cursor line start & Cursor up               |
-| Win + ↓          | Cursor line end & Cursor down               |
-| Alt + ↑          | Scroll to top                               |
-| Alt + ↓          | Scroll to bottom                            |
-| Win + Ctrl + ←   | Virtual desktop on the left                 |
-| Win + Ctrl + →   | Virtual desktop on the right                |
-| Win + d          | New virtual desktops                        |
-| Win + q          | Close virtual desktop                       |
+| Ctrl + Shift + ↑ | Window transform move up                    |
+| Ctrl + Shift + ↓ | Window transform move down                  |
+| Ctrl + Shift + ← | Window transform move left                  |
+| Ctrl + Shift + → | Window transform move right                 |
+| Ctrl + ←         | Virtual desktop on the left                 |
+| Ctrl + →         | Virtual desktop on the right                |
+| Ctrl + Shift + d | New virtual desktops                        |
+| Ctrl + q         | Close virtual desktop                       |
 
 ## Browser
 
