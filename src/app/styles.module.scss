@@ -1,4 +1,6 @@
 .list_count {
+  position: relative;
+  right: 70px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
@@ -18,6 +20,7 @@
 
 @media screen and (max-width: 739.98px) {
   .list_count {
+    right: 0;
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
   }

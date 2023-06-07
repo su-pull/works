@@ -36,6 +36,9 @@ html {
 
 body {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #fffffe;
   color: rgb(55 65 81);
   text-align: center;
