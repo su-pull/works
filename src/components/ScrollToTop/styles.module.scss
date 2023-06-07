@@ -1,0 +1,41 @@
+.ReturnTopPosition {
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+  z-index: 4;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  color: var(--color-second-color);
+  cursor: pointer;
+  background: var(--color-bg);
+  border-top: solid 1px gray;
+  border-right: solid 1px #111;
+  border-bottom: solid 1px #111;
+  border-left: solid 1px gray;
+  border-radius: 8px;
+}
+
+.isBottom {
+  transition-duration: 0.4s;
+  transform: translateY(0px);
+}
+
+.isNotBottom {
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 0.4s;
+  transform: translateY(20px);
+}
+
+.rotateCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 739.98px) {
+  .ReturnTopPosition {
+    right: 20px;
+  }
+}
