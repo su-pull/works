@@ -6,6 +6,9 @@ import { Metadata } from 'next'
 import PageRoot from 'components/PageRoot'
 import Font from 'components/Font'
 import { Analytics } from '@vercel/analytics/react'
+import { Playfair_Display } from 'next/font/google'
+
+const mainFont = Playfair_Display({ subsets: ['latin'], weight: '400' })
 
 export const metadata: Metadata = {
   icons: {
@@ -16,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body className={mainFont.className}>
         <Layout>
           <Font />
           <Analytics mode={'production'} />
