@@ -1,18 +1,23 @@
-'use client';
+'use client'
 
-import useBottomActive from 'hooks/useBottomActive';
-import { Fragment } from 'react';
-import styles from './styles.module.scss';
-import { IoIosArrowRoundUp } from 'react-icons/io';
+import useBottomActive from 'hooks/useBottomActive'
+import { Fragment } from 'react'
+import styles from './styles.module.scss'
+import { IoIosArrowRoundUp } from 'react-icons/io'
+import useFitter from 'react-page-fitter'
+import { usePathname } from 'next/navigation'
 
 const ScrollToTop = () => {
-  const { isBottomActive } = useBottomActive(20);
+  const pathname = usePathname()
+  const isFit = useFitter('main', pathname)
+  const { isBottomActive } = useBottomActive(20)
   const returnTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
-    });
-  };
+    })
+  }
+  if (isFit) return null
 
   return (
     <Fragment>
@@ -25,7 +30,7 @@ const ScrollToTop = () => {
         <IoIosArrowRoundUp size={18} />
       </button>
     </Fragment>
-  );
-};
+  )
+}
 
-export default ScrollToTop;
+export default ScrollToTop
