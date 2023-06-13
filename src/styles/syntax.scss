@@ -18,6 +18,7 @@ pre {
   margin: 32px 0;
   width: 600px;
   border: solid 1px black;
+  overflow: scroll;
 }
 
 [data-rehype-pretty-code-fragment] div {
