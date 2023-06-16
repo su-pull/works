@@ -1,31 +1,46 @@
 ---
-title: 'react-page-fitter'
+title: 'react-page-fitter v2.0.4'
 subtitle: 'simple ui style hook'
 date: '2023-04-7'
 ---
 
-used with React.
-
-isFit is using useLayoutEffect for the block the browser from repainting the screen.
-This is to get the window size on the client side.
-
-It can create components like:
+It is make UI components visible depending on whether the content is over the viewport.  
+Combined with framer motion and CSS animation, you should be able to build a more natural UI.
 
 ```tsx
-import { useRef } from 'react'
+import { usePathname } from 'next/navigation'
 import useFitter from 'react-page-fitter'
 
-const Main = ({ children }) => {
-  const ref = useRef(null)
-  const isFit = useFitter(ref)
+const Component = () => {
+  const pathname = usePathname()
+  const isFit = useFitter('main', pathname)
 
-  return (
-    <main ref={ref}>
-      {children}
-      {!isFit && <UiComponent />}
-    </main>
-  )
+  if (isFit) return null
+
+  return <UiComponent />
 }
 
-export default Main
+export default Component
+```
+
+can be target with class starting with dot.
+
+```tsx
+const isFit = useFitter('.otherClass', pathname)
+```
+
+CSS-in-JS and CSS Modules
+
+```tsx
+const isFit = useFitter('.' + styles.otherClass, pathname)
+```
+
+Framer Motion
+
+```tsx
+<AnimatePresence>
+    <motion.button animate={{ y: isFit ? 20 : 0, transition: { duration: ... } }} exit={{ y: ... }}>
+      {text}
+    </motion.button>
+</AnimatePresence>
 ```

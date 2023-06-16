@@ -1,5 +1,5 @@
 ---
-title: 'juster'
+title: 'juster v2.0.3'
 subtitle: 'key binding program'
 date: '2022-12-24'
 ---
