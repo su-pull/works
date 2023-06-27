@@ -42,13 +42,13 @@ const MagicCard = () => {
   return (
     <MagicCircle
       classImage={styles.shadow}
-      data={images}
+      images={images}
       dynamic
       start={4}
       radius={200}
       width={120}
       height={120}
-      controller={200}
+      controller={40}
       animate={{
         scale: 0.8,
         rotateX: 70,
