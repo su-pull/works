@@ -4,12 +4,18 @@ import gfm from 'remark-gfm'
 import rehypePrettyCode from 'rehype-pretty-code'
 import { ReturnData, PostData } from 'types/PostData'
 import { compileMDX } from 'next-mdx-remote/rsc'
+import MagicCard from 'components/MagicCircle'
+
+const Element = {
+  MagicCard,
+}
 
 const getPostMdx = async (slug: string): Promise<ReturnData> => {
   const folder = path.join(process.cwd(), '/src/projects')
   const fullPath = path.join(folder, `${slug}.mdx`)
   const file = fs.readFileSync(fullPath, 'utf8')
   const { frontmatter, content } = await compileMDX<PostData>({
+    components: Element,
     source: file,
     options: {
       parseFrontmatter: true,
