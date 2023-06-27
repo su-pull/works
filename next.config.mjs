@@ -1,3 +1,5 @@
+import mdx from '@next/mdx'
+
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
@@ -23,13 +25,10 @@ const securityHeaders = [
     key: 'Referrer-Policy',
     value: 'strict-origin-when-cross-origin',
   },
-];
-
-module.exports = {
+]
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: false,
-  experimental: {
-    appDir: true,
-  },
 
   async headers() {
     return [
@@ -37,6 +36,9 @@ module.exports = {
         source: '/(.*)',
         headers: securityHeaders,
       },
-    ];
+    ]
   },
-};
+}
+
+const withMDX = mdx()
+export default withMDX(nextConfig)
