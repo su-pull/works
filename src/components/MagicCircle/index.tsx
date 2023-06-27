@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { MagicCircle } from 'react-magic-card'
+import styles from './styles.module.scss'
 
 const MagicCard = () => {
   const images = [
@@ -40,7 +41,7 @@ const MagicCard = () => {
   ]
   return (
     <MagicCircle
-      classImage="shadow"
+      classImage={styles.shadow}
       data={images}
       dynamic
       start={4}
