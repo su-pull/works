@@ -1,28 +1,23 @@
-import getPostData from 'lib/getPostData'
+import getPostMdx from 'lib/getPostMdx'
 import Params from 'types/Params'
 import generateSEOData from 'lib/generateSEOData'
 import { Metadata } from 'next'
 import getSlugPath from 'lib/getSlugPath'
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const post = await getPost(params.slug)
-  return generateSEOData({ title: post.title, subtitle: post.subtitle, date: post.date })
+  const { meta } = await getPageContent(params.slug)
+  return generateSEOData({ title: meta.title, subtitle: meta.subtitle, date: meta.date })
 }
 
-const getPost = async (slug: string) => {
-  const post = await getPostData(slug)
-  return post
+const getPageContent = async (slug: string) => {
+  const { meta, content } = await getPostMdx(slug)
+  return { meta, content }
 }
 
 async function Page({ params }: Params) {
-  const post = await getPost(params.slug)
+  const { content } = await getPageContent(params.slug)
 
-  return (
-    <>
-      <h1>{post?.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post?.content }} />
-    </>
-  )
+  return <>{content}</>
 }
 
 export async function generateStaticParams() {

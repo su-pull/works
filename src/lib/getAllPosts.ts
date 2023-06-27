@@ -17,7 +17,7 @@ const getAllPosts = async (skip?: number, limit?: number): Promise<PostsData[]> 
         const { data } = matter<string, PostsDataMap>(file)
 
         return {
-          slug: fileName.replace(/\.md$/, ''),
+          slug: fileName.replace(/\.mdx$/, ''),
           title: data.title as string,
           subtitle: data.subtitle as string,
           date: data.date as string,

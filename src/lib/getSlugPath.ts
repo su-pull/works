@@ -7,7 +7,7 @@ const getSlugPath = async () => {
   const posts = await Promise.all(
     files.map((fileName) => {
       return {
-        slug: fileName.replace(/\.md$/, ''),
+        slug: fileName.replace(/\.mdx$/, ''),
       }
     })
   )
