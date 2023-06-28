@@ -1,0 +1,10 @@
+.outer {
+  overflow: scroll;
+  height: 400px;
+}
+
+.inner {
+  position: absolute;
+  border-radius: 50%;
+  background: pink;
+}

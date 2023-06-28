@@ -5,9 +5,11 @@ import rehypePrettyCode from 'rehype-pretty-code'
 import { ReturnData, PostData } from 'types/PostData'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import MagicCard from 'components/MagicCircle'
+import { PageFitter } from 'components/PageFitter'
 
 const Element = {
   MagicCard,
+  PageFitter,
 }
 
 const getPostMdx = async (slug: string): Promise<ReturnData> => {
