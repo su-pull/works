@@ -1,31 +1,44 @@
-import getAllPosts from 'lib/getAllPosts';
+import getAllPosts from 'lib/getAllPosts'
 
 const getPosts = async () => {
-  const posts = await getAllPosts();
-  return posts;
-};
+  const posts = await getAllPosts()
+  return posts
+}
 
 export async function GET() {
-  const posts = await getPosts();
+  const posts = await getPosts()
+  const URL = process.env.PROD_URL
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-    <rss version="2.0">
+    <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
       <channel>
-        <title>su-pull</title>
-        <link>${process.env.PROD_URL}</link>
-        <description>the 2xxx year fight of my load</description>
+        <title>
+          <![CDATA[works]]>
+        </title>
+        <description>
+          <![CDATA[Projects]]>
+        </description>
+        <link>${URL}</link>
+        <generator>Next.js Route Handlers</generator>
+        <lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>  
+        <atom:link href="${URL}/feed.xml" rel="self" type="application/rss+xml"/>
         ${posts
           .map(
-            (post) => `
+            ({ title, subtitle, slug, date }) => `
               <item>
-                <title>${post.title}</title>
-                <description>${post.subtitle}</description>
-                <link>${post.slug}</link>
-                <pubDate>${post.date}</pubDate>
+                <title>
+                  <![CDATA[ ${title} ]]>
+                </title>
+                <description>
+                  <![CDATA[ ${subtitle} ]]>
+                </description>
+                <link>/${slug}</link>
+                <guid isPermaLink="true">/${slug}</guid>
+                <pubDate>${new Date(date).toUTCString()}</pubDate>
               </item>
             `
           )
           .join('')}
       </channel>
-    </rss>`;
-  return new Response(xml, { headers: { 'content-type': 'application/xml' } });
+    </rss>`
+  return new Response(xml, { headers: { 'content-type': 'application/xml' } })
 }
