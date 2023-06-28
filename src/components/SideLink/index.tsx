@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import styles from './styles.module.scss'
 import Link from 'next/link'
 
@@ -22,7 +22,7 @@ const SideLink = () => {
     <div className={styles.side_fixed}>
       <ul className={styles.ul_box}>
         {linkArr.map(({ slug, title }) => (
-          <motion.li
+          <m.li
             animate={{
               x: isHover == slug ? 40 : 0,
               fontSize: isHover == slug ? '14px' : '10px',
@@ -50,7 +50,7 @@ const SideLink = () => {
             <Link className={styles.link_box} href={slug}>
               {title}
             </Link>
-          </motion.li>
+          </m.li>
         ))}
       </ul>
     </div>
