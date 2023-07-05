@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const dynamicParams = false
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const font = playfair.className + ' ' + source.variable + ' ' + italianno.variable
   return (

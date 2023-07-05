@@ -1,83 +1,16 @@
 ---
-title: 'react-magic-card v0.0.10'
-subtitle: 'image garrally component'
+title: 'react-magic-card'
+subtitle: 'It is components for image gallery'
 date: '2023-06-27'
 ---
 
-It is framer motion component for image galleries.  
-Please add overflow hidden to the parent element's style.
+[npm download](https://www.npmjs.com/package/react-magic-card) /
+[GitHub source](https://github.com/su-pull/react-magic-card)
+
+It's framer motion component for image gallery.  
+use margins and negative margins to adjust component positioning.
 
 <MagicCard />
+<MagicStraight />
 
-```tsx
-const MagicCard = () => {
-  const images = [
-    {
-      src: '/1.jpeg',
-      alt: 'sample',
-    },
-    {
-      src: '/2.jpeg',
-      alt: 'sample',
-    },
-    {
-      src: '/3.jpeg',
-      alt: 'sample',
-    },
-    {
-      src: '/4.jpeg',
-      alt: 'sample',
-    },
-    {
-      src: '/5.jpeg',
-      alt: 'sample',
-    },
-    {
-      src: '/6.jpeg',
-      alt: 'sample',
-    },
-    {
-      src: '/7.jpeg',
-      alt: 'sample',
-    },
-    {
-      src: '/8.jpeg',
-      alt: 'sample',
-    },
-  ]
-  return (
-    <MagicCircle
-      classImage="shadow"
-      images={images}
-      dynamic
-      start={4}
-      radius={200}
-      width={120}
-      height={120}
-      controller={200}
-      animate={{
-        scale: 0.8,
-        rotateX: 70,
-        rotateY: 40,
-        rotateZ: -50,
-        selectScale: 1.6,
-        selectRotateX: 40,
-        selectRotateY: 40,
-        selectRotateZ: -10,
-      }}
-      initial={{
-        scale: 0.8,
-        rotateX: 70,
-        rotateY: 40,
-        rotateZ: -50,
-        selectScale: 1.6,
-        selectRotateX: 40,
-        selectRotateY: 40,
-        selectRotateZ: -10,
-      }}
-      transition={{ duration: 0.2, type: 'spring', damping: 9, stiffness: 400 }}
-      wheelDelay={60}
-    />
-  )
-}
-```
+It can stop scrolling and to be overflow from view, by add overflow hidden to the parent element's style.

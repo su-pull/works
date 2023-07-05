@@ -5,10 +5,12 @@ import rehypePrettyCode from 'rehype-pretty-code'
 import { ReturnData, PostData } from 'types/PostData'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import MagicCard from 'components/MagicCircle'
+import MagicStraight from 'components/MagicStraight'
 import { PageFitter } from 'components/PageFitter'
 
 const Element = {
   MagicCard,
+  MagicStraight,
   PageFitter,
 }
 

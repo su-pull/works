@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { MagicCircle } from 'react-magic-card'
+import { MagicStraight } from 'react-magic-card'
 import styles from './styles.module.scss'
 
 const MagicCard = () => {
@@ -39,26 +39,31 @@ const MagicCard = () => {
       alt: 'sample',
     },
   ]
+
   return (
-    <MagicCircle
-      classImages={styles.shadow}
-      className={styles.margin}
+    <MagicStraight
       images={images}
-      dynamic
-      start={4}
-      radius={200}
       width={120}
       height={120}
-      controller={40}
+      start={0}
+      controller={50}
+      reverseIndex={false}
+      className={styles.margin}
+      classImages={styles.shadow}
+      classImageSelect={styles.select}
+      selectOffsetX={160}
+      margin={-30}
+      delay={80}
       animate={{
         scale: 0.8,
-        rotateX: 70,
-        rotateY: 40,
-        rotateZ: -50,
-        selectScale: 1.6,
-        selectRotateX: 40,
-        selectRotateY: 40,
-        selectRotateZ: -10,
+        rotateX: 20,
+        rotateY: -20,
+        rotateZ: 0,
+        opacity: 1,
+        selectScale: 1,
+        selectRotateX: 0,
+        selectRotateY: 0,
+        selectRotateZ: 0,
       }}
       initial={{
         scale: 0.8,
@@ -70,11 +75,10 @@ const MagicCard = () => {
         selectRotateY: 40,
         selectRotateZ: -10,
       }}
-      transition={{ duration: 0.2, type: 'spring', damping: 9, stiffness: 400 }}
-      pickProperty={{ classPick: styles.shadow }}
-      delay={60}
+      transition={{ duration: 1.4, type: 'spring', mass: 0.2 }}
+      pickTransition={{ duration: 0.2, type: 'spring', mass: 1 }}
+      pickProperty={{ classPick: styles.shadow, white: true, alpha: 0.3, blur: 20, scale: 2, offset: 0 }}
     />
   )
 }
-
 export default MagicCard
