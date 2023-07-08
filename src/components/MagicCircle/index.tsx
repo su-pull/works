@@ -50,6 +50,7 @@ const MagicCard = () => {
       width={120}
       height={120}
       controller={40}
+      loading="eager"
       animate={{
         scale: 0.8,
         rotateX: 70,

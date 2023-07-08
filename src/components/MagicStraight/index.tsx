@@ -48,6 +48,7 @@ const MagicCard = () => {
       start={0}
       controller={50}
       reverseIndex={false}
+      loading="eager"
       className={styles.margin}
       classImages={styles.shadow}
       classImageSelect={styles.select}
