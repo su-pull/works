@@ -1,8 +1,8 @@
-.shadow {
-  box-shadow: 0 0 12px -0.2px rgba(0, 0, 0, 0.2);
+.component {
+  z-index: 40;
+  margin: 340px 0;
 }
 
-.margin {
-  z-index: 10;
-  margin: 140px 0;
+.shadow {
+  box-shadow: 0 0 12px -0.2px rgba(0, 0, 0, 0.2);
 }

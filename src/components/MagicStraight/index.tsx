@@ -5,7 +5,7 @@ import { MagicStraight } from 'react-magic-card'
 import styles from './styles.module.scss'
 
 const MagicCard = () => {
-  const images = [
+  const images1 = [
     {
       src: '/1.jpeg',
       alt: 'sample',
@@ -26,35 +26,42 @@ const MagicCard = () => {
       src: '/5.jpeg',
       alt: 'sample',
     },
+  ]
+
+  const images2 = [
     {
-      src: '/6.jpeg',
+      src: '/illust/o1.jpg',
       alt: 'sample',
     },
     {
-      src: '/7.jpeg',
+      src: '/illust/o2.jpg',
       alt: 'sample',
     },
     {
-      src: '/8.jpeg',
+      src: '/illust/o3.jpg',
       alt: 'sample',
     },
   ]
 
+  const time = new Date().getHours()
+  const resultArray = time > 17 || time < 5 ? images2 : images1
+
   return (
     <MagicStraight
-      images={images}
+      images={resultArray}
       width={120}
       height={120}
       start={0}
-      controller={50}
+      controller={40}
       reverseIndex={false}
-      loading="eager"
-      className={styles.margin}
+      loading="lazy"
+      className={styles.component}
       classImages={styles.shadow}
       classImageSelect={styles.select}
-      selectOffsetX={160}
+      selectOffsetX={200}
+      selectOffsetY={-150}
       margin={-30}
-      delay={80}
+      delay={50}
       animate={{
         scale: 0.8,
         rotateX: 20,
@@ -78,7 +85,7 @@ const MagicCard = () => {
       }}
       transition={{ duration: 1.4, type: 'spring', mass: 0.2 }}
       pickTransition={{ duration: 0.2, type: 'spring', mass: 1 }}
-      pickProperty={{ classPick: styles.shadow, white: true, alpha: 0.3, blur: 20, scale: 2, offset: 0 }}
+      pickProperty={{ classPick: styles.shadow, white: false, alpha: 0.2, blur: 20, scale: 2, offset: 0 }}
     />
   )
 }

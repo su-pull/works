@@ -1,8 +1,9 @@
-.shadow {
-  box-shadow: 0 0 12px -0.2px rgba(0, 0, 0, 0.2);
-}
-
-.margin {
+.component {
   margin: 120px 80px 0;
   outline: none;
+}
+
+.shadow {
+  box-shadow: 0 0 12px -0.2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
 }
